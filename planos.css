@@ -1,0 +1,326 @@
+:root {
+    --azul-profundo: #0A2342;
+    --azul-royal: #1E90FF;
+    --verde-mar: #2E8B57;
+    --verde-claro: #4CAF50;
+    --fundo-claro: #f4f7fa;
+    --branco: #ffffff;
+    --cinza-texto: #666;
+}
+
+.planos-container {
+    background: linear-gradient(135deg, var(--fundo-claro) 0%, #ffffff 100%);
+    padding: 80px 50px;
+    text-align: center;
+}
+
+.planos-titulo {
+    font-size: 2.5rem;
+    color: var(--azul-profundo);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.planos-subtitulo {
+    color: var(--cinza-texto);
+    margin-bottom: 50px;
+    font-size: 1.1rem;
+}
+
+.planos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.plano-card {
+    background: var(--branco);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 
+        0 15px 35px rgba(0,0,0,0.05),
+        0 5px 15px rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 2px solid transparent;
+}
+
+.plano-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 
+        0 25px 50px rgba(0,0,0,0.1),
+        0 10px 20px rgba(0,0,0,0.05);
+    border-color: var(--verde-mar);
+}
+
+.plano-destaque {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--verde-mar);
+    color: white;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    border-radius: 0 0 15px 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.plano-header {
+    margin-bottom: 25px;
+}
+
+.plano-header h3 {
+    color: var(--azul-profundo);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.plano-header p {
+    color: var(--cinza-texto);
+    font-size: 1rem;
+}
+
+.plano-preco {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.preco-valor {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--azul-profundo);
+}
+
+.preco-periodo {
+    color: var(--cinza-texto);
+    font-size: 1rem;
+}
+
+.plano-beneficios {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+}
+
+.plano-beneficios li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: var(--azul-profundo);
+    font-size: 0.95rem;
+}
+
+.plano-beneficios li i {
+    margin-right: 10px;
+    color: var(--verde-mar);
+    font-size: 1.2rem;
+}
+
+.plano-beneficios li.inativo {
+    color: #999;
+    text-decoration: line-through;
+}
+
+.plano-beneficios li.inativo i {
+    color: #999;
+}
+
+.btn-plano {
+    width: 100%;
+    padding: 15px;
+    background: var(--verde-mar);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-plano:hover {
+    background: var(--verde-claro);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.planos-garantia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    color: var(--cinza-texto);
+    font-size: 0.9rem;
+}
+
+.planos-garantia i {
+    color: var(--verde-mar);
+    font-size: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+    .planos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .planos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Estilos adicionais para o modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-lead {
+    background: white;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    position: relative;
+    transform: scale(0.7);
+    animation: popIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    color: var(--azul-profundo);
+    font-size: 1.5rem;
+}
+
+.btn-fechar {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.btn-fechar:hover {
+    color: var(--azul-profundo);
+}
+
+.form-grupo {
+    margin-bottom: 20px;
+}
+
+.form-grupo label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--azul-profundo);
+    font-weight: 600;
+}
+
+.form-grupo input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-grupo input:focus {
+    border-color: var(--verde-mar);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.1);
+}
+
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background: var(--verde-mar);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-enviar:hover {
+    background: var(--azul-profundo);
+    transform: translateY(-3px);
+}
+
+.modal-sucesso {
+    text-align: center;
+    padding: 30px;
+}
+
+.modal-sucesso h2 {
+    color: var(--verde-mar);
+    margin-bottom: 15px;
+}
+
+.modal-sucesso p {
+    color: var(--azul-profundo);
+    margin-bottom: 20px;
+}
+
+/* Validações e Estados de Erro */
+.form-grupo.erro input {
+    border-color: #ff6b6b;
+}
+
+.erro-mensagem {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Responsividade do Modal */
+@media (max-width: 600px) {
+    .modal-lead {
+        width: 90%;
+        margin: 0 5%;
+        padding: 20px;
+    }
+}

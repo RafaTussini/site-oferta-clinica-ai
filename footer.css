@@ -1,0 +1,118 @@
+:root {
+    --color-blue-light: #3498db;
+    --color-blue-dark: #2980b9;
+    --color-green-light: #2ecc71;
+    --color-green-dark: #27ae60;
+    --color-background: #f4f6f7;
+    --color-text: #2c3e50;
+}
+
+.footer {
+    background: linear-gradient(135deg, var(--color-blue-light), var(--color-green-dark));
+    color: white;
+    padding: 4rem 0;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.footer-brand .footer-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+}
+
+.footer-brand .footer-tagline {
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-columns {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-column h4 {
+    color: white;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--color-green-light);
+    padding-bottom: 0.5rem;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+    color: var(--color-green-light);
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 1.5rem;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.contact-icon {
+    margin-right: 0.5rem;
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.footer-legal {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+.legal-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.legal-links a {
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+}

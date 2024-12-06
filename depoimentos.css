@@ -1,0 +1,121 @@
+:root {
+    --azul-profundo: #0A2342;
+    --azul-royal: #1E90FF;
+    --verde-mar: #2E8B57;
+    --verde-suave: #00FA9A;
+    --fundo-claro: #f4f7fa;
+}
+
+.depoimentos-container {
+    background: var(--fundo-claro);
+    padding: 80px 50px;
+}
+
+.depoimentos-titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: var(--azul-profundo);
+}
+
+.depoimentos-slider {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.depoimento-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    position: relative;
+    width: 33%;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.depoimento-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.depoimento-aspas {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 4rem;
+    color: var(--verde-mar);
+    opacity: 0.2;
+}
+
+.depoimento-texto {
+    font-style: italic;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+    color: #333;
+    line-height: 1.6;
+}
+
+.depoimento-autor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.autor-info h4 {
+    margin: 0;
+    color: var(--azul-profundo);
+    font-size: 1.1rem;
+}
+
+.autor-info p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.depoimento-rating {
+    color: #FFD700;
+    font-size: 1.2rem;
+}
+
+.depoimentos-estatisticas {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(to right, var(--azul-royal), var(--verde-mar));
+    color: white;
+    padding: 40px;
+    border-radius: 15px;
+}
+
+.estatistica-item {
+    text-align: center;
+}
+
+.estatistica-item h3 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.estatistica-item p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .depoimentos-slider {
+        flex-direction: column;
+    }
+    
+    .depoimento-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .depoimentos-estatisticas {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
